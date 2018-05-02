@@ -13,4 +13,24 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>
+	<persistence-unit name="banque-jpa" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>EntityBanque.Banque</class>
+		<class>EntityBanque.Client</class>
+		<class>EntityBanque.Compte</class>
+		<class>EntityBanque.Operation</class>
+		<class>EntityBanque.Virement</class>
+		<class>EntityBanque.LivretA</class>
+		<class>EntityBanque.AssuranceVie</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/banque" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.archive.autodetection" value="" />
+		</properties>
+	</persistence-unit>
 </persistence>
